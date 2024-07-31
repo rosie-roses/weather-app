@@ -1,0 +1,58 @@
+"use client";
+
+import { UserGlobalContext } from '@/app/context/global-context';
+import { clearSky, cloudy, drizzleIcon, haze, mistFog, rain, snow, sun, thunder, tornado } from '@/app/utils/icons';
+import { KelvinToCelsius } from '@/app/utils/misc';
+import React, { useState } from 'react';
+
+function Temperature() {
+    const { forecast } = UserGlobalContext();
+    const { main, timezone, name, weather } = forecast;
+
+    if (!forecast || !weather) {
+        return <div>Loading...</div>;
+    }
+
+    const temp = KelvinToCelsius(main?.temp);
+    const tempMin = KelvinToCelsius(main?.temp_min);
+    const tempMax = KelvinToCelsius(main?.temp_max);
+    const [ localTime, setLocalTime ] = useState<string>("");
+    const [ currDay, setCurrDay ] = useState<string>("");
+    const { main: weatherMain, description } = weather[0];
+
+    const getWeatherIcon = () => {
+        switch (weatherMain) {
+            case "Drizzle":
+                return drizzleIcon;
+            case "Rain":
+                return rain;
+            case "Snow":
+                return snow;
+            case "Clear":
+                return clearSky;
+            case "Clouds":
+                return cloudy;
+            case "Thunderstorm":
+                return thunder;
+            case "Mist":
+                return mistFog;
+            case "Haze":
+                return haze;
+            case "Tornado":
+                return tornado;
+            default:
+                return clearSky;
+        }
+    }
+
+    return (
+        <div className='pt-6 pb-5 border rounded-lg flex flex-col justify-between dark:bg-dark-grey shadow-sm dark:shadow-none'>
+            <p className='flex justify-between items-center'>
+                <span className='font-medium'>{currDay}</span>
+                <span className='font-medium'>{localTime}</span>
+            </p>
+        </div>
+    );
+}
+
+export default Temperature;

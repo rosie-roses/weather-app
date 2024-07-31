@@ -5,9 +5,12 @@ import React from 'react';
 import { github } from '../utils/icons';
 import ThemeDropdown from './theme-dropdown/theme-dropdown';
 import SearchDialog from './search-dialog/search-dialog';
+import { UserGlobalContext } from '../context/global-context';
 
 function Navbar() {
   const router = useRouter();
+  const { state } = UserGlobalContext();
+  console.log(state);
   return (
     <div className="w-full py-4 flex items-center justify-between">
       <div className="left"></div>
