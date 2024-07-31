@@ -22,15 +22,16 @@ import {
     CloudFog,
     Haze,
     Tornado,
+    SunIcon,
   } from "lucide-react";
   
   export const commandIcon = <Command size={14} />;
   export const github = <Github size={20} />;
   export const searchIcon = <Search />;
-  export const drizzleIcon = <CloudDrizzle size={25} />;
+  export const drizzle = <CloudDrizzle size={25} />;
   export const rain = <CloudRain size={30} />;
   export const snow = <Snowflake size={30} />;
-  export const clearSky = <CloudSun size={30} />;
+  export const partlySun = <CloudSun size={30} />;
   export const cloudy = <Cloudy size={30} />;
   export const navigation = <Navigation size={15} />;
   export const thermo = <ThermometerSun size={15} />;
@@ -43,6 +44,7 @@ import {
   export const people = <UsersRound size={15} />;
   export const calender = <CalendarDays size={15} />;
   export const sun = <SunDim size={15} />;
+  export const clearSky = <SunIcon size={30} />;
   export const thunder = <CloudLightning size={30} />;
   export const mistFog = <CloudFog size={30} />;
   export const haze = <Haze size={30} />;
