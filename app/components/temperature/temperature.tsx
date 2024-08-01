@@ -3,6 +3,7 @@
 import { UserGlobalContext } from '@/app/context/global-context';
 import { partlySun, cloudy, drizzle, haze, mistFog, navigation, rain, snow, thunder, tornado, clearSky } from '@/app/utils/icons';
 import { KelvinToCelsius } from '@/app/utils/misc';
+import { Skeleton } from '@/components/ui/skeleton';
 import moment from 'moment';
 import React, { useEffect, useState } from 'react';
 
@@ -11,7 +12,9 @@ function Temperature() {
     const { main, timezone, name, weather } = forecast;
 
     if (!forecast || !weather) {
-        return <div>Loading...</div>;
+        return (
+            <Skeleton className='h-[12rem] w-full' />
+        );
     }
 
     const temp = KelvinToCelsius(main?.temp);
