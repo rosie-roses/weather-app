@@ -10,8 +10,6 @@ function Temperature() {
     const { forecast } = UserGlobalContext();
     const { main, timezone, name, weather } = forecast;
 
-    console.log(main);
-
     if (!forecast || !weather) {
         return <div>Loading...</div>;
     }
