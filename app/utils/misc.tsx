@@ -1,3 +1,5 @@
+import moment from "moment";
+
 export const KelvinToCelsius = (kelvin: number) => {
     return Math.round(kelvin - 273.15);
 };
@@ -23,4 +25,8 @@ export const AirQualityIndexText = [
         rating: 100,
         description: "very poor",
     }
-]
+];
+
+export const UnixToTime = (unix: number, timezone: number) => {
+    return moment.unix(unix).utcOffset(timezone / 60).format("HH:mm");
+};
