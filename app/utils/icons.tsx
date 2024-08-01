@@ -23,6 +23,7 @@ import {
     Haze,
     Tornado,
     SunIcon,
+    Sunrise,
   } from "lucide-react";
   
   export const commandIcon = <Command size={14} />;
@@ -49,3 +50,4 @@ import {
   export const mistFog = <CloudFog size={30} />;
   export const haze = <Haze size={30} />;
   export const tornado = <Tornado size={30} />;
+  export const sunrise = <Sunrise size={15} />;
