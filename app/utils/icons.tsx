@@ -24,6 +24,8 @@ import {
     Tornado,
     SunIcon,
     Sunrise,
+    Hourglass,
+    Clock
   } from "lucide-react";
   
   export const commandIcon = <Command size={14} />;
@@ -51,3 +53,5 @@ import {
   export const haze = <Haze size={30} />;
   export const tornado = <Tornado size={30} />;
   export const sunrise = <Sunrise size={15} />;
+  export const hourglass = <Hourglass size={15} />;
+  export const clock = <Clock size={15} />;
