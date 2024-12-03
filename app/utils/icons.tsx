@@ -13,9 +13,7 @@ import {
     Wind,
     Gauge,
     Droplets,
-    Thermometer,
     Eye,
-    UsersRound,
     CalendarDays,
     SunDim,
     CloudLightning,
@@ -26,7 +24,8 @@ import {
     Sunrise,
     Hourglass,
     Clock,
-    Users
+    Users,
+    BadgeAlert
   } from "lucide-react";
   
   export const commandIcon = <Command size={14} />;
@@ -43,9 +42,7 @@ import {
   export const wind = <Wind size={15} />;
   export const gauge = <Gauge size={15} />;
   export const droplets = <Droplets size={15} />;
-  export const thermometer = <Thermometer size={15} />;
   export const eye = <Eye size={15} />;
-  export const people = <UsersRound size={15} />;
   export const calender = <CalendarDays size={15} />;
   export const sun = <SunDim size={15} />;
   export const clearSky = <SunIcon size={30} />;
@@ -57,3 +54,4 @@ import {
   export const hourglass = <Hourglass size={15} />;
   export const clock = <Clock size={15} />;
   export const users = <Users size={15} />;
+  export const badgeAlert = <BadgeAlert size={15} />;

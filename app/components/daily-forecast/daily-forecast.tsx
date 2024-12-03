@@ -87,7 +87,7 @@ function DailyForecast() {
                           </p>
                           <p>{getWeatherIcon()}</p>
                           <p className="mt-1">
-                            {KelvinToCelsius(forecast.main.temp)}°C
+                            {KelvinToCelsius(forecast.main.temp)}&deg;C
                           </p>
                           </CardContent>
                         </Card>
