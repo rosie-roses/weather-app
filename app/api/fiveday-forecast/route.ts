@@ -13,7 +13,7 @@ export async function GET(req:NextRequest) {
         const data = await res.json();
         return NextResponse.json(data);
     }
-    catch {
+    catch (error) {
         console.log('Error in getting daily data');
         return new Response('Error in getting daily data', { status: 500 });
     }

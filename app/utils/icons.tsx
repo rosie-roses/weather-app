@@ -25,7 +25,8 @@ import {
     SunIcon,
     Sunrise,
     Hourglass,
-    Clock
+    Clock,
+    Users
   } from "lucide-react";
   
   export const commandIcon = <Command size={14} />;
@@ -55,3 +56,4 @@ import {
   export const sunrise = <Sunrise size={15} />;
   export const hourglass = <Hourglass size={15} />;
   export const clock = <Clock size={15} />;
+  export const users = <Users size={15} />;

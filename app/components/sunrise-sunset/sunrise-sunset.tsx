@@ -27,7 +27,7 @@ function SunriseSunset() {
                         <h2 className='flex items-center gap-2 font-medium'>{sunset}Sunset</h2>
                         <p className='pt-4 text-2xl'>{sunsetTime}</p>
                     </div>
-                    <p className="bottom">Sunrise: {sunriseTime}</p>
+                    <p className="bottom text-sm">Sunrise: {sunriseTime}</p>
                 </>
             ) : (
                 <>
@@ -35,7 +35,7 @@ function SunriseSunset() {
                         <h2 className='flex items-center gap-2 font-medium'>{sunrise}Sunrise</h2>
                         <p className='pt-4 text-2xl'>{sunriseTime}</p>
                     </div>
-                    <p className="bottom">Sunset: {sunsetTime}</p>
+                    <p className="bottom text-sm">Sunset: {sunsetTime}</p>
                 </>
             )}
         </div>
