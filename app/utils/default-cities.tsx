@@ -1,4 +1,4 @@
-const DefaultCountries = [
+const DefaultCities = [
     {
         name: "Madrid",
         country: "ES",
@@ -36,4 +36,4 @@ const DefaultCountries = [
     },
 ];
 
-export default DefaultCountries;
+export default DefaultCities;

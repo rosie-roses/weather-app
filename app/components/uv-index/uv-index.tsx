@@ -15,7 +15,6 @@ function UVIndex() {
 
     const { daily } = uvIndex;
     const { uv_index_clear_sky_max, uv_index_max } = daily;
-    console.log(uvIndex);
     const uvIndexMax = uv_index_max[0].toFixed(0);
 
     const uvIndexCategory = (uvIndex: number) => {

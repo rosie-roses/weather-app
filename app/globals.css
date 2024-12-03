@@ -79,3 +79,15 @@
     rgba(178, 34, 34, 1) 100%
   );
 }
+
+.temperature {
+  background-image: linear-gradient(
+    to right,
+    #00bcd8 0%,       
+    #00cbce 20%,       
+    #4db14d 40%,        
+    #d6c103 60%,       
+    #d26900 80%,        
+    rgba(178, 34, 34, 1) 100%        
+  );
+}
