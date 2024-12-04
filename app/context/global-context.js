@@ -16,7 +16,7 @@ export const GlobalContextProvider = ( { children } ) => {
     const [ geoCodedList, setGeoCodedList ] = useState(DefaultCities);
     const [ inputValue, setInputValue ] = useState("");
     const [ activeCityCoords, setActiveCityCoords ] = useState([
-        -41.2864, 174.7762
+        -41.28664, 174.77557
     ]);
 
     const fetchForecast = async (lat, lon) => {
