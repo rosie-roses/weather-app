@@ -10,14 +10,16 @@ function SearchDialog() {
   const { geoCodedList, inputValue } = UseGlobalContext();
   const { handleInput, setActiveCityCoords } = UseGlobalContextUpdate();
   const [ hoveredIndex, setHoveredIndex ] = useState(0);
+  const [isDialogOpen, setIsDialogOpen] = useState(false);
 
   const getSelectedCoords = (lat: number, lon: number) => {
     setActiveCityCoords([ lat, lon ]);
+    setIsDialogOpen(false);
   }
 
   return (
     <div className='search-btn'>
-      <Dialog>
+      <Dialog open={isDialogOpen} onOpenChange={setIsDialogOpen}>
         <DialogTrigger asChild>
             <Button
               variant="outline"
@@ -30,7 +32,7 @@ function SearchDialog() {
               </div>
             </Button>
           </DialogTrigger>
-          <DialogContent className="p-0">
+          <DialogContent className="p-0 w-full max-w-[75%] sm:max-w-60%] md:max-w-[50%] lg:max-w-[40%]">
             <DialogTitle className="sr-only">Search for a command or location</DialogTitle>
             <Command className="rounded-lg border shadow-md">
             <CommandInput
