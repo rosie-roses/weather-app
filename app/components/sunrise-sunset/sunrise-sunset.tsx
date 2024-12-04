@@ -1,6 +1,6 @@
 "use client";
 
-import { UserGlobalContext } from '@/app/context/global-context';
+import { UseGlobalContext } from '@/app/context/global-context';
 import { sunrise, sunset } from '@/app/utils/icons';
 import { UnixToTime } from '@/app/utils/misc';
 import { Skeleton } from '@/components/ui/skeleton';
@@ -8,7 +8,7 @@ import moment from 'moment';
 import React, { useState } from 'react';
 
 function SunriseSunset() {
-    const { forecast } = UserGlobalContext();
+    const { forecast } = UseGlobalContext();
     if (!forecast || !forecast?.sys || !forecast?.sys?.sunset || !forecast?.sys?.sunrise) {
         return (
             <Skeleton className='h-[12rem] w-full' />

@@ -1,12 +1,12 @@
 "use client";
 
-import { UserGlobalContext } from '@/app/context/global-context';
+import { UseGlobalContext } from '@/app/context/global-context';
 import { eye } from '@/app/utils/icons';
 import { Skeleton } from '@/components/ui/skeleton';
 import React from 'react'
 
 function Visibility() {
-    const { forecast } = UserGlobalContext();
+    const { forecast } = UseGlobalContext();
 
     if (!forecast || !forecast?.visibility) {
         return <Skeleton className='h-[12rem] w-full' />;

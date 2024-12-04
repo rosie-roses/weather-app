@@ -1,6 +1,6 @@
 "use client";
 
-import { UserGlobalContext } from '@/app/context/global-context';
+import { UseGlobalContext } from '@/app/context/global-context';
 import { partlySun, cloudy, drizzle, haze, mistFog, navigation, rain, snow, thunder, tornado, clearSky } from '@/app/utils/icons';
 import { KelvinToCelsius } from '@/app/utils/misc';
 import { Skeleton } from '@/components/ui/skeleton';
@@ -8,7 +8,7 @@ import moment from 'moment';
 import React, { useEffect, useState } from 'react';
 
 function Temperature() {
-    const { forecast } = UserGlobalContext();
+    const { forecast } = UseGlobalContext();
     const { main, timezone, name, weather } = forecast;
 
     if (!forecast || !weather) {

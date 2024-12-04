@@ -1,6 +1,6 @@
 "use client";
 
-import { UserGlobalContext } from '@/app/context/global-context';
+import { UseGlobalContext } from '@/app/context/global-context';
 import { partlySun, cloudy, drizzle, haze, mistFog, rain, snow, thunder, tornado, clearSky, hourglass } from '@/app/utils/icons';
 import { KelvinToCelsius } from '@/app/utils/misc';
 import { Card, CardContent } from '@/components/ui/card';
@@ -10,7 +10,7 @@ import moment from 'moment';
 import React from 'react';
 
 function DailyForecast() {
-  const { forecast, fiveDayForecast } = UserGlobalContext();
+  const { forecast, fiveDayForecast } = UseGlobalContext();
   const { city, list } = fiveDayForecast;
   const { weather, timezone } = forecast;
 
@@ -63,7 +63,7 @@ function DailyForecast() {
       <h2 className='flex items-center gap-2 font-medium'>{hourglass}Daily Forecast</h2>
       <div className="h-full flex overflow-hidden mt-[-10px]">
         {todayForecast.length < 1 ? (
-          <div>
+          <div className='flex justify-center items-center'>
             <div className="text-red-500">
               No data available
             </div>
@@ -82,13 +82,13 @@ function DailyForecast() {
                       >
                         <Card className='border-none'>
                           <CardContent className="flex flex-col gap-y-1 aspect-square items-center justify-center">
-                          <p>
-                            {moment(forecast.dt_txt).format('HH:mm')}
-                          </p>
-                          <p>{getWeatherIcon()}</p>
-                          <p className="mt-1">
-                            {KelvinToCelsius(forecast.main.temp)}&deg;C
-                          </p>
+                            <p>
+                              {moment(forecast.dt_txt).format('HH:mm')}
+                            </p>
+                            <p>{getWeatherIcon()}</p>
+                            <p className="mt-1">
+                              {KelvinToCelsius(forecast.main.temp)}&deg;C
+                            </p>
                           </CardContent>
                         </Card>
                       </CarouselItem>

@@ -1,12 +1,12 @@
 "use client";
 
-import { UserGlobalContext } from '@/app/context/global-context';
+import { UseGlobalContext } from '@/app/context/global-context';
 import { droplets } from '@/app/utils/icons';
 import { Skeleton } from '@/components/ui/skeleton';
 import React from 'react'
 
 function Humidity() {
-    const { forecast } = UserGlobalContext();
+    const { forecast } = UseGlobalContext();
 
     if (!forecast || !forecast?.main || !forecast?.main?.humidity) {
         return <Skeleton className='h-[12rem] w-full' />;

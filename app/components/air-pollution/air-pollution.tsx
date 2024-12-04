@@ -1,6 +1,6 @@
 "use client";
 
-import { UserGlobalContext } from '@/app/context/global-context';
+import { UseGlobalContext } from '@/app/context/global-context';
 import { badgeAlert } from '@/app/utils/icons';
 import { AirQualityIndexText } from '@/app/utils/misc';
 import { Progress } from '@/components/ui/progress';
@@ -8,7 +8,7 @@ import { Skeleton } from '@/components/ui/skeleton';
 import React from 'react';
 
 function AirPollution() {
-    const { airQuality } = UserGlobalContext();
+    const { airQuality } = UseGlobalContext();
     if (!airQuality || !airQuality.list || !airQuality.list[0] || !airQuality.list[0].main) {
         return (
             <Skeleton className='h-[12rem] w-full col-span-2 md:col-span-full' />

@@ -3,11 +3,10 @@
 import React, { useEffect } from 'react';
 import { MapContainer, TileLayer, useMap } from 'react-leaflet';
 import 'leaflet/dist/leaflet.css';
-import { duration } from 'moment';
-import { UserGlobalContext } from '@/app/context/global-context';
+import { UseGlobalContext } from '@/app/context/global-context';
 import { Skeleton } from '@/components/ui/skeleton';
 
-function flyToActiveCity({ activeCityCoords }) {
+function FlyToActiveCity({ activeCityCoords }) {
     const map = useMap();
 
     useEffect(() => {
@@ -24,11 +23,11 @@ function flyToActiveCity({ activeCityCoords }) {
 }
 
 function Mapbox() {
-    const { forecast } = UserGlobalContext();
+    const { forecast } = UseGlobalContext();
 
     const activeCityCoords = forecast?.coord;
 
-    if (!forecast || !forecast?.coord || !activeCityCoords) {
+    if (!forecast || !forecast?.coord) {
         return (
             <Skeleton className='w-full' />
         );
@@ -47,7 +46,7 @@ function Mapbox() {
                     url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
                     attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
                 />
-                <flyToActiveCity activeCityCoords={activeCityCoords} />
+                <FlyToActiveCity activeCityCoords={activeCityCoords} />
             </MapContainer>
         </div>
     );

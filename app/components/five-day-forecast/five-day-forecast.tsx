@@ -1,13 +1,13 @@
 "use client";
 
-import { UserGlobalContext } from '@/app/context/global-context';
+import { UseGlobalContext } from '@/app/context/global-context';
 import { calender } from '@/app/utils/icons';
 import { KelvinToCelsius, UnixToDay } from '@/app/utils/misc';
 import { Skeleton } from '@/components/ui/skeleton';
 import React from 'react';
 
 function FiveDayForecast() {
-    const { fiveDayForecast } = UserGlobalContext();
+    const { fiveDayForecast } = UseGlobalContext();
     const { city, list } = fiveDayForecast;
 
     if (!fiveDayForecast || !city || !list) {
