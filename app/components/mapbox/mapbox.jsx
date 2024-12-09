@@ -29,22 +29,22 @@ function Mapbox() {
 
     if (!forecast || !forecast?.coord) {
         return (
-            <Skeleton className='w-full' />
+            <Skeleton className="w-full" />
         );
     }
 
     return (
-        <div className='flex-1 basis-[50%] border rounded-lg'>
-            <MapContainer 
-                center={[activeCityCoords.lat, activeCityCoords.lon]}
+        <div className="flex-1 basis-[50%] border rounded-lg">
+            <MapContainer
+                center={[activeCityCoords.lat || 0, activeCityCoords.lon || 0]}
                 zoom={13}
                 scrollWheelZoom={false}
-                style={{height: 'calc(100% - 2rem)', width: 'calc(100% - 2rem)'}}
-                className='rounded-lg m-4'
+                style={{ height: 'calc(100% - 2rem)', width: 'calc(100% - 2rem)' }}
+                className="rounded-lg m-4"
             >
-                <TileLayer 
+                <TileLayer
                     url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-                    attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+                    attribution="&copy; <a href='https://www.openstreetmap.org/copyright'>OpenStreetMap</a> contributors"
                 />
                 <FlyToActiveCity activeCityCoords={activeCityCoords} />
             </MapContainer>

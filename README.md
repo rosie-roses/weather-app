@@ -1,4 +1,4 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+A responsive web application inspired by the iPhone weather app, providing real-time weather details for cities worldwide using the OpenWeatherMap API. Built with modern web technologies for a sleek and intuitive user experience.
 
 ## Getting Started
 
