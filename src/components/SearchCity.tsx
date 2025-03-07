@@ -9,11 +9,12 @@ import {
   CommandList,
   CommandSeparator,
 } from "./ui/command";
-import { Clock, Loader2, Search, XCircle } from "lucide-react";
+import { Clock, Loader2, Search, Star, XCircle } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 import { useSearchLocations } from "@/hooks/useWeather";
 import { useSearchHistory } from "@/hooks/useSearchHistory";
 import { format } from "date-fns";
+import { useFavourites } from "@/hooks/useFavourites";
 
 const SearchCity = () => {
   const [open, setOpen] = useState(false);
@@ -22,6 +23,7 @@ const SearchCity = () => {
 
   const { data: locations, isLoading } = useSearchLocations(query);
   const { history, clearHistory, addToHistory } = useSearchHistory();
+  const { favourites } = useFavourites();
 
   const handleSelect = (cityData: string) => {
     const [lat, lon, name, state, country] = cityData.split("|");
@@ -59,9 +61,30 @@ const SearchCity = () => {
             <CommandEmpty>No cities found.</CommandEmpty>
           )}
 
-          {/* <CommandGroup heading="Favourites">
-            <CommandItem>Calendar</CommandItem>
-          </CommandGroup> */}
+          {favourites.length > 0 && (
+              <CommandGroup heading="Favourites">
+                {favourites.map((loc) => {
+                  return (
+                    <CommandItem
+                      key={loc.id}
+                      value={`${loc.lat}|${loc.lon}|${loc.name}|${loc.state}|${loc.country}`}
+                      onSelect={handleSelect}
+                    >
+                      <Star className="h-4 w-4 mr-2 text-yellow-500" />
+                      <span>{loc.name},</span>
+                      {loc.state && (
+                        <span className="text-sm text-muted-foreground">
+                          {loc.state},
+                        </span>
+                      )}
+                      <span className="text-sm text-muted-foreground">
+                        {loc.country}
+                      </span>
+                    </CommandItem>
+                  );
+                })}
+              </CommandGroup>
+          )}
 
           {history.length > 0 && (
             <>

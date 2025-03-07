@@ -1,4 +1,4 @@
-import { FavouriteCityItem, SearchHistoryItem } from "@/api/types";
+import { FavouriteCityItem } from "@/api/types";
 import { useLocalStorage } from "./useLocalStorage";
 import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
 

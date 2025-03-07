@@ -120,3 +120,11 @@ export interface FavouriteCityItem {
 export interface FavouriteButtonProps {
   data: WeatherData;
 }
+
+export interface FavouriteCityTabletProps {
+  id: string;
+  name: string;
+  lat: number;
+  lon: number;
+  onRemove: (id: string) => void;
+}
