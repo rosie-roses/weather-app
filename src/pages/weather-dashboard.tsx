@@ -3,8 +3,13 @@ import HourlyTemperature from "@/components/HourlyTemperature";
 import LoadingSkeleton from "@/components/LoadingSkeleton";
 import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert";
 import { Button } from "@/components/ui/button";
+import WeatherDetails from "@/components/WeatherDetails";
 import { useGeolocation } from "@/hooks/useGeolocation";
-import { useForecastQuery, useReverseGeoCodeQuery, useWeatherQuery } from "@/hooks/useWeather";
+import {
+  useForecastQuery,
+  useReverseGeoCodeQuery,
+  useWeatherQuery,
+} from "@/hooks/useWeather";
 import { AlertTriangle, MapPin, RefreshCw } from "lucide-react";
 
 const WeatherDashboard = () => {
@@ -78,11 +83,11 @@ const WeatherDashboard = () => {
           </Button>
         </AlertDescription>
       </Alert>
-    )
+    );
   }
 
   if (!weatherQuery.data || !forecastQuery.data) {
-    return <LoadingSkeleton />
+    return <LoadingSkeleton />;
   }
 
   return (
@@ -96,7 +101,11 @@ const WeatherDashboard = () => {
           disabled={weatherQuery.isFetching || forecastQuery.isFetching}
           className="cursor-pointer"
         >
-          <RefreshCw className={`h-4 w-4 ${weatherQuery.isFetching ? "animate-spin" : ""}`} />
+          <RefreshCw
+            className={`h-4 w-4 ${
+              weatherQuery.isFetching ? "animate-spin" : ""
+            }`}
+          />
         </Button>
       </div>
 
@@ -106,7 +115,7 @@ const WeatherDashboard = () => {
           <HourlyTemperature data={forecastQuery.data} />
         </div>
         <div>
-
+          <WeatherDetails data={weatherQuery.data} />
         </div>
       </div>
     </div>
