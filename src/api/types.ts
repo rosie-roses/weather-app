@@ -50,6 +50,7 @@ export interface ForecastData {
     country: string;
     sunrise: number;
     sunset: number;
+    timezone: number;
   };
 }
 
@@ -138,4 +139,8 @@ export interface UvIndexData {
   date_iso: number;
   date: number;
   value: number;
+}
+
+export interface TimeProps {
+  timezone: number;
 }

@@ -29,7 +29,7 @@ const WeatherForecast = ({ data }: WeatherForecastProps) => {
   return (
     <Card>
       <CardHeader>
-        <CardTitle>5 Day Forecast</CardTitle>
+        <CardTitle>Five Day Forecast</CardTitle>
       </CardHeader>
       <CardContent>
         <div className="grid gap-6">
@@ -37,7 +37,7 @@ const WeatherForecast = ({ data }: WeatherForecastProps) => {
             return (
               <div
                 key={day.date}
-                className="grid grid-cols-3 items-center gap-4 rounded-lg border p-4"
+                className="grid grid-cols-2 items-center gap-4 rounded-lg border p-4"
               >
                 <div>
                   <p className="font-medium">
@@ -48,26 +48,28 @@ const WeatherForecast = ({ data }: WeatherForecastProps) => {
                   </p>
                 </div>
 
-                <div className="flex justify-center gap-4">
-                  <span className="flex items-center text-blue-500">
-                    <ArrowDown className="h-4 w-4" />
-                    {formatTemp(day.temp_min)}
-                  </span>
-                  <span className="flex items-center text-red-500">
-                    <ArrowUp className="h-4 w-4" />
-                    {formatTemp(day.temp_max)}
-                  </span>
-                </div>
+                <div className="flex flex-col items-end xl:flex-row xl:gap-4">
+                  <div className="flex justify-center gap-2 xl:gap-4">
+                    <span className="flex items-center text-blue-500">
+                      <ArrowDown className="h-4 w-4" />
+                      {formatTemp(day.temp_min)}
+                    </span>
+                    <span className="flex items-center text-red-500">
+                      <ArrowUp className="h-4 w-4" />
+                      {formatTemp(day.temp_max)}
+                    </span>
+                  </div>
 
-                <div className="flex justify-end gap-4">
-                  <span className="flex items-center gap-1">
-                    <Droplets className="h-4 w-4 text-blue-500" />
-                    <span className="text-sm">{day.humidity}%</span>
-                  </span>
-                  <span className="flex items-center gap-1">
-                    <Wind className="h-4 w-4 text-blue-500" />
-                    <span className="text-sm">{day.wind}m/s</span>
-                  </span>
+                  <div className="flex justify-center gap-4">
+                    <span className="flex items-center gap-1">
+                      <Droplets className="h-4 w-4 text-blue-500" />
+                      <span className="text-sm">{day.humidity}%</span>
+                    </span>
+                    <span className="flex items-center gap-1">
+                      <Wind className="h-4 w-4 text-blue-500" />
+                      <span className="text-sm">{day.wind}m/s</span>
+                    </span>
+                  </div>
                 </div>
               </div>
             );

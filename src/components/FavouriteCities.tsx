@@ -1,5 +1,5 @@
 import { useFavourites } from "@/hooks/useFavourites";
-import { ScrollArea } from "./ui/scroll-area";
+import { ScrollArea, ScrollBar } from "./ui/scroll-area";
 import { FavouriteCityTabletProps } from "@/api/types";
 import { useNavigate } from "react-router-dom";
 import { useWeatherQuery } from "@/hooks/useWeather";
@@ -28,6 +28,7 @@ const FavouriteCities = () => {
             );
           })}
         </div>
+        <ScrollBar orientation="horizontal" />
       </ScrollArea>
     </>
   );

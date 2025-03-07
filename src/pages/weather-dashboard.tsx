@@ -13,6 +13,7 @@ import {
   useWeatherQuery,
 } from "@/hooks/useWeather";
 import { AlertTriangle, MapPin, RefreshCw } from "lucide-react";
+import DateTime from "@/components/DateTime";
 
 const WeatherDashboard = () => {
   const {
@@ -118,7 +119,10 @@ const WeatherDashboard = () => {
           <HourlyTemperature data={forecastQuery.data} />
         </div>
         <div className="grid gap-4 md:grid-cols-2 items-start">
-          <WeatherDetails data={weatherQuery.data} />
+          <div className="flex flex-col gap-4">
+            <DateTime timezone={forecastQuery.data?.city?.timezone} />
+            <WeatherDetails data={weatherQuery.data} />
+          </div>
           <WeatherForecast data={forecastQuery.data} />
         </div>
       </div>

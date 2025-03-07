@@ -1,4 +1,5 @@
 import CurrentWeather from "@/components/CurrentWeather";
+import DateTime from "@/components/DateTime";
 import FavouriteButton from "@/components/FavouriteButton";
 import HourlyTemperature from "@/components/HourlyTemperature";
 import LoadingSkeleton from "@/components/LoadingSkeleton";
@@ -53,13 +54,16 @@ const City = () => {
           />
         </div>
       </div>
-      <div className="grid gap-6">
+      <div className="grid gap-4">
         <div className="flex flex-col lg:flex-row gap-4">
           <CurrentWeather data={weatherQuery.data} locationName={locName} />
           <HourlyTemperature data={forecastQuery.data} />
         </div>
-        <div className="grid gap-6 md:grid-cols-2 items-start">
-          <WeatherDetails data={weatherQuery.data} />
+        <div className="grid gap-4 md:grid-cols-2 items-start">
+          <div className="flex flex-col gap-4">
+            <DateTime timezone={forecastQuery.data?.city?.timezone} />
+            <WeatherDetails data={weatherQuery.data} />
+          </div>
           <WeatherForecast data={forecastQuery.data} />
         </div>
       </div>
