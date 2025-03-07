@@ -77,3 +77,21 @@ export interface HourlyTemperatureProps {
 export interface WeatherDetailsProps {
   data: WeatherData;
 }
+
+export interface WeatherForecastProps {
+  data: ForecastData;
+}
+
+export interface DailyForecast {
+  temp_min: number;
+  temp_max: number;
+  humidity: number;
+  wind: number;
+  weather: {
+    id: number;
+    main: string;
+    description: string;
+    icon: string;
+  };
+  date: number;
+}
