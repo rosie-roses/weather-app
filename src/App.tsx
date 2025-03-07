@@ -5,7 +5,7 @@ import { ThemeProvider } from "./context/theme-provider";
 import WeatherDashboard from "./pages/weather-dashboard";
 import City from "./pages/city";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import { ReactQueryDevtools } from '@tanstack/react-query-devtools'
+import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -13,9 +13,9 @@ const queryClient = new QueryClient({
       staleTime: 5 * 60 * 1000,
       gcTime: 10 * 60 * 1000,
       retry: false,
-      refetchOnWindowFocus: false
-    }
-  }
+      refetchOnWindowFocus: false,
+    },
+  },
 });
 
 function App() {

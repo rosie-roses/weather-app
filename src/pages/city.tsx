@@ -1,9 +1,7 @@
-import React from 'react'
+import React from "react";
 
 const City = () => {
-  return (
-    <div>City</div>
-  )
-}
+  return <div>City</div>;
+};
 
 export default City;
