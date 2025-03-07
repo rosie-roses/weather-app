@@ -64,3 +64,8 @@ export interface GeoLocationState {
     error: string | null;
     isLoading: boolean;
 }
+
+export interface CurrentWeatherProps {
+    data: WeatherData;
+    locationName?: GeoCodingData;
+}

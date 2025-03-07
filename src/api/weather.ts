@@ -10,7 +10,7 @@ class WeatherAPI {
             appid: API_CONFIG.API_KEY,
             ...params,
         });
-        console.log(searchParams.toString());
+
         return `${endpoint}?${searchParams.toString()}`;
     }
 
