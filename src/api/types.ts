@@ -106,3 +106,17 @@ export interface SearchHistoryItem {
   state?: string;
   searchedAt: number;
 }
+
+export interface FavouriteCityItem {
+  id: string;
+  name: string;
+  lat: number;
+  lon: number;
+  country: string;
+  state?: string;
+  addedAt: number;
+}
+
+export interface FavouriteButtonProps {
+  data: WeatherData;
+}

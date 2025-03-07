@@ -1,4 +1,5 @@
 import CurrentWeather from "@/components/CurrentWeather";
+import FavouriteButton from "@/components/FavouriteButton";
 import HourlyTemperature from "@/components/HourlyTemperature";
 import LoadingSkeleton from "@/components/LoadingSkeleton";
 import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert";
@@ -41,8 +42,10 @@ const City = () => {
 
   return (
     <div className="space-y-4">
-      <div className="flex items-center justify-between">
-        <div></div>
+      <div className="flex items-center justify-end">
+        <div>
+          <FavouriteButton data={{...weatherQuery.data, name: params.cityName}} />
+        </div>
       </div>
       <div className="grid gap-6">
         <div className="flex flex-col lg:flex-row gap-4">
