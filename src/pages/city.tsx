@@ -5,7 +5,11 @@ import LoadingSkeleton from "@/components/LoadingSkeleton";
 import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert";
 import WeatherDetails from "@/components/WeatherDetails";
 import WeatherForecast from "@/components/WeatherForecast";
-import { useForecastQuery, useReverseGeoCodeQuery, useWeatherQuery } from "@/hooks/useWeather";
+import {
+  useForecastQuery,
+  useReverseGeoCodeQuery,
+  useWeatherQuery,
+} from "@/hooks/useWeather";
 import { AlertTriangle } from "lucide-react";
 import { useParams, useSearchParams } from "react-router-dom";
 
@@ -44,7 +48,9 @@ const City = () => {
     <div className="space-y-4">
       <div className="flex items-center justify-end">
         <div>
-          <FavouriteButton data={{...weatherQuery.data, name: params.cityName}} />
+          <FavouriteButton
+            data={{ ...weatherQuery.data, name: params.cityName }}
+          />
         </div>
       </div>
       <div className="grid gap-6">

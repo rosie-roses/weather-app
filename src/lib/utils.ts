@@ -21,3 +21,14 @@ export const getWindDirection = (degree: number) => {
 
   return directions[index];
 };
+
+export const categoriseUvIndex = (uvIndex: number | undefined) => {
+  if (uvIndex === undefined) return { description: "N/A" };
+
+  uvIndex = Math.round(uvIndex);
+  if (uvIndex <= 2) return { description: `${uvIndex} (Low)` };
+  if (uvIndex <= 5) return { description: `${uvIndex} (Moderate)` };
+  if (uvIndex <= 7) return { description: `${uvIndex} (High)` };
+  if (uvIndex <= 10) return { description: `${uvIndex} (Very High)` };
+  return { description: `${uvIndex} (Extreme)` };
+};

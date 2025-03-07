@@ -112,12 +112,12 @@ const WeatherDashboard = () => {
         </Button>
       </div>
 
-      <div className="grid gap-6">
+      <div className="grid gap-4">
         <div className="flex flex-col lg:flex-row gap-4">
           <CurrentWeather data={weatherQuery.data} locationName={locName} />
           <HourlyTemperature data={forecastQuery.data} />
         </div>
-        <div className="grid gap-6 md:grid-cols-2 items-start">
+        <div className="grid gap-4 md:grid-cols-2 items-start">
           <WeatherDetails data={weatherQuery.data} />
           <WeatherForecast data={forecastQuery.data} />
         </div>

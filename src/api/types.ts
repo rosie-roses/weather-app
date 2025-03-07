@@ -20,6 +20,8 @@ export interface WeatherData {
     temp_max: number;
     pressure: number;
     humidity: number;
+    grnd_level: number;
+    sea_level: number;
   };
   wind: {
     speed: number;
@@ -30,6 +32,7 @@ export interface WeatherData {
     sunset: number;
     country: string;
   };
+  visibility: number;
   name: string;
   dt: number;
 }
@@ -127,4 +130,12 @@ export interface FavouriteCityTabletProps {
   lat: number;
   lon: number;
   onRemove: (id: string) => void;
+}
+
+export interface UvIndexData {
+  lat: number;
+  lon: number;
+  date_iso: number;
+  date: number;
+  value: number;
 }

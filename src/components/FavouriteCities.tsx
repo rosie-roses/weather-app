@@ -56,35 +56,41 @@ const FavouriteCityTablet = ({
         size={"icon"}
         className="absolute right-1 top-1 w-6 h-6 rounded-full p-0 
       hover:text-destructive-foreground group-hover:opacity-100 cursor-pointer"
-      onClick={(e) => {
-        e.stopPropagation();
-        onRemove(id);
-        toast.error(`Removed ${name} from Favourites`);
-      }}
+        onClick={(e) => {
+          e.stopPropagation();
+          onRemove(id);
+          toast.error(`Removed ${name} from Favourites`);
+        }}
       >
         <X className="w-4 h-4" />
       </Button>
       {isLoading ? (
         <div className="flex h-8 items-center justify-center">
-            <Loader2 className="w-4 h-4 animate-spin" />
+          <Loader2 className="w-4 h-4 animate-spin" />
         </div>
       ) : weather ? (
         <>
-            <div className="flex items-center gap-2">
-                <img 
-                    src={`https://openweathermap.org/img/wn/${weather.weather[0].icon}.png`}
-                    alt={weather.weather[0].description}
-                    className="w-8 h-8"
-                />
-                <div>
-                    <p className="font-medium">{name}</p>
-                    <p className="text-xs text-muted-foreground">{weather.sys.country}</p>
-                </div>
+          <div className="flex items-center gap-2">
+            <img
+              src={`https://openweathermap.org/img/wn/${weather.weather[0].icon}.png`}
+              alt={weather.weather[0].description}
+              className="w-8 h-8"
+            />
+            <div>
+              <p className="font-medium">{name}</p>
+              <p className="text-xs text-muted-foreground">
+                {weather.sys.country}
+              </p>
             </div>
-            <div className="ml-auto text-right">
-                <p className="text-xl font-bold">{Math.round(weather.main.temp)}°</p>
-                <p className="text-xs capitalize text-muted-foreground">{weather.weather[0].description}</p>
-            </div>
+          </div>
+          <div className="ml-auto text-right">
+            <p className="text-xl font-bold">
+              {Math.round(weather.main.temp)}°
+            </p>
+            <p className="text-xs capitalize text-muted-foreground">
+              {weather.weather[0].description}
+            </p>
+          </div>
         </>
       ) : null}
     </div>

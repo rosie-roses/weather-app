@@ -32,7 +32,7 @@ const WeatherForecast = ({ data }: WeatherForecastProps) => {
         <CardTitle>5 Day Forecast</CardTitle>
       </CardHeader>
       <CardContent>
-        <div className="grid gap-4">
+        <div className="grid gap-6">
           {nextDays.map((day) => {
             return (
               <div

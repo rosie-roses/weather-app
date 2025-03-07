@@ -1,10 +1,24 @@
 import { WeatherDetailsProps } from "@/api/types";
-import { formatTime, getWindDirection } from "@/lib/utils";
-import { Compass, Gauge, Sunrise, Sunset } from "lucide-react";
+import { categoriseUvIndex, formatTime, getWindDirection } from "@/lib/utils";
+import {
+  Compass,
+  Eye,
+  Gauge,
+  Sunrise,
+  Sunset,
+  ThermometerSun,
+  Trees,
+  Waves,
+} from "lucide-react";
 import { Card, CardContent, CardHeader, CardTitle } from "./ui/card";
+import { useUvIndexQuery } from "@/hooks/useWeather";
 
 const WeatherDetails = ({ data }: WeatherDetailsProps) => {
-  const { wind, main, sys } = data;
+  const { wind, main, sys, visibility } = data;
+  const uvIndexQuery = useUvIndexQuery(data.coord);
+
+  const uvIndex = uvIndexQuery.data?.value;
+  const uvCategory = categoriseUvIndex(uvIndex);
 
   const details = [
     {
@@ -23,13 +37,37 @@ const WeatherDetails = ({ data }: WeatherDetailsProps) => {
       title: "Wind Direction",
       value: `${getWindDirection(wind.deg)} (${wind.deg}°)`,
       icon: Compass,
-      color: "text-green-500",
+      color: "text-purple-500",
     },
     {
       title: "Air Pressure",
       value: `${main.pressure} hPa`,
       icon: Gauge,
-      color: "text-purple-500",
+      color: "text-pink-500",
+    },
+    {
+      title: "Visibility",
+      value: `${(visibility / 1000).toFixed(1)} km`,
+      icon: Eye,
+      color: "text-yellow-500",
+    },
+    {
+      title: "UV Index",
+      value: uvCategory.description || "N/A",
+      icon: ThermometerSun,
+      color: "text-red-500",
+    },
+    {
+      title: "Sea Level",
+      value: `${main.sea_level} m`,
+      icon: Waves,
+      color: "text-teal-500",
+    },
+    {
+      title: "Ground Level",
+      value: `${main.grnd_level} m`,
+      icon: Trees,
+      color: "text-green-500",
     },
   ];
 

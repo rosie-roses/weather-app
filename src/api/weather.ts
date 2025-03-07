@@ -1,5 +1,11 @@
 import { API_CONFIG } from "./config";
-import { Coordinates, ForecastData, GeoCodingData, WeatherData } from "./types";
+import {
+  Coordinates,
+  ForecastData,
+  GeoCodingData,
+  UvIndexData,
+  WeatherData,
+} from "./types";
 
 class WeatherAPI {
   private createUrl(endpoint: string, params: Record<string, string | number>) {
@@ -56,6 +62,14 @@ class WeatherAPI {
       limit: 5,
     });
     return this.fetchData<GeoCodingData[]>(url);
+  }
+
+  async getUvIndex({ lat, lon }: Coordinates): Promise<UvIndexData> {
+    const url = this.createUrl(`${API_CONFIG.BASE_URL}/uvi`, {
+      lat: lat.toString(),
+      lon: lon.toString(),
+    });
+    return this.fetchData<UvIndexData>(url);
   }
 }
 
