@@ -69,3 +69,7 @@ export interface CurrentWeatherProps {
     data: WeatherData;
     locationName?: GeoCodingData;
 }
+
+export interface HourlyTemperatureProps {
+    data: ForecastData;
+}
