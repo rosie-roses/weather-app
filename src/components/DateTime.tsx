@@ -30,13 +30,15 @@ const DateTime = ({ timezone }: TimeProps) => {
       }).format(localDateObj);
 
       const [time, amPmString] = timeString.split(" ");
-      
+
       const totalOffsetMinutes = timezone / 60;
       const offsetHours = Math.floor(totalOffsetMinutes / 60);
       const offsetMinutes = Math.abs(totalOffsetMinutes % 60);
 
       const sign = offsetHours >= 0 ? "+" : "-";
-      const formattedOffset = `GMT${sign}${String(Math.abs(offsetHours)).padStart(2, "0")}:${String(offsetMinutes).padStart(2, "0")}`;
+      const formattedOffset = `GMT${sign}${String(
+        Math.abs(offsetHours)
+      ).padStart(2, "0")}:${String(offsetMinutes).padStart(2, "0")}`;
 
       setLocalDate(dateString);
       setLocalTime(time);
@@ -50,11 +52,11 @@ const DateTime = ({ timezone }: TimeProps) => {
   return (
     <Card>
       <CardHeader>
-        <CardTitle>Local Date and Time</CardTitle>
+        <CardTitle>Local Date Time</CardTitle>
       </CardHeader>
       <CardContent>
         <div className="flex flex-col w-full">
-          <div className="text-lg mb-4">
+          <div className="text-lg mb-4 font-semibold">
             {localDate}{" "}
             <span className="text-sm text-muted-foreground">
               ({timeZoneOffset})

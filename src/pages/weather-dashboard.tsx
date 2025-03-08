@@ -1,7 +1,6 @@
 import CurrentWeather from "@/components/CurrentWeather";
 import FavouriteCities from "@/components/FavouriteCities";
 import HourlyTemperature from "@/components/HourlyTemperature";
-import LoadingSkeleton from "@/components/LoadingSkeleton";
 import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert";
 import { Button } from "@/components/ui/button";
 import WeatherDetails from "@/components/WeatherDetails";
@@ -14,6 +13,7 @@ import {
 } from "@/hooks/useWeather";
 import { AlertTriangle, MapPin, RefreshCw } from "lucide-react";
 import DateTime from "@/components/DateTime";
+import WeatherDashboardSkeleton from "@/components/WeatherDashboardSkeleton";
 
 const WeatherDashboard = () => {
   const {
@@ -37,7 +37,7 @@ const WeatherDashboard = () => {
   };
 
   if (locLoading) {
-    return <LoadingSkeleton />;
+    return <WeatherDashboardSkeleton />;
   }
 
   if (locError) {
@@ -90,7 +90,7 @@ const WeatherDashboard = () => {
   }
 
   if (!weatherQuery.data || !forecastQuery.data) {
-    return <LoadingSkeleton />;
+    return <WeatherDashboardSkeleton />;
   }
 
   return (

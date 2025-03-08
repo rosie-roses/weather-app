@@ -8,7 +8,7 @@ const Header = () => {
   const isDark = theme === "dark";
   return (
     <header className="sticky top-0 z-50 w-full border-b bg-background/30 backdrop-blur-md py-4">
-      <div className="container mx-auto flex h-14 items-center justify-between px-4">
+      <div className="container mx-auto flex :h-14 items-end md:items-center justify-between px-4">
         <Link to={"/"}>
           <img
             src={isDark ? "/logo-dark.svg" : "/logo-light.svg"}
@@ -16,11 +16,11 @@ const Header = () => {
             className="h-12"
           />
         </Link>
-        <div className="flex gap-4">
+        <div className="flex flex-row gap-4 items-center">
           <SearchCity />
           <div
             onClick={() => setTheme(isDark ? "light" : "dark")}
-            className={`flex items-center cursor-pointer transition-transform duration-500 ${
+            className={`cursor-pointer transition-transform duration-500 ${
               isDark ? "rotate-180" : "rotate-0"
             }`}
           >

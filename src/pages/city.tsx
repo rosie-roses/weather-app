@@ -1,8 +1,8 @@
+import CitySkeleton from "@/components/CitySkeleton";
 import CurrentWeather from "@/components/CurrentWeather";
 import DateTime from "@/components/DateTime";
 import FavouriteButton from "@/components/FavouriteButton";
 import HourlyTemperature from "@/components/HourlyTemperature";
-import LoadingSkeleton from "@/components/LoadingSkeleton";
 import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert";
 import WeatherDetails from "@/components/WeatherDetails";
 import WeatherForecast from "@/components/WeatherForecast";
@@ -42,7 +42,7 @@ const City = () => {
   }
 
   if (!weatherQuery.data || !forecastQuery.data || !params.cityName) {
-    return <LoadingSkeleton />;
+    return <CitySkeleton />;
   }
 
   return (

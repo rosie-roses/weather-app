@@ -12,7 +12,7 @@ const Layout = ({ children }: PropsWithChildren) => {
         <div className="container mx-auto px-4 text-center text-muted-foreground">
           <p>
             Made by{" "}
-            <a href="https://github.com/rosie-roses/weathrly" target="_blank">
+            <a href="https://github.com/rosie-roses/weather-app" target="_blank">
               rosie-roses 🌹
             </a>
           </p>

@@ -45,14 +45,14 @@ const SearchCity = () => {
       <Button
         onClick={() => setOpen(true)}
         variant={"outline"}
-        className="relative w-full justify-start text-sm text-muted-foreground sm:pr-12 md:w-40 lg:w-64"
+        className="justify-start text-sm text-muted-foreground sm:pr-12 md:w-40 lg:w-64"
       >
         <Search className="mr-2 w-4 h-4" />
-        Search cities...
+        Search city...
       </Button>
       <CommandDialog open={open} onOpenChange={setOpen}>
         <CommandInput
-          placeholder="Search cities..."
+          placeholder="Search city..."
           value={query}
           onValueChange={setQuery}
         />
