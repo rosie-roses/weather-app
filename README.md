@@ -1,4 +1,5 @@
-<img src="./public/logo-dark.svg" alt="logo" width="300"> 
+<img src="./public/logo-dark.svg" alt="logo" width="300">
+
 
 ## <a name="table">Table of Contents</a>
 
@@ -14,6 +15,8 @@ Weathrly is a weather application built with **React**, **TypeScript**, and **Vi
 React Query is used in Weathrly to handle data fetching from the OpenWeatherMap API. It helps manage cache, retries, background data synchronisation, and loading states, providing a smooth and optimised user experience when interacting with weather data.
 
 The application has been deployed to production and is now live! 🎉 You can access it at [weather-app-six-black-74.vercel.app](https://weather-app-six-black-74.vercel.app).
+
+<img src="./public/preview.png" alt="banner" width="500">
 
 ## <a name="tech-stack">🛠️ Tech Stack</a>
 
