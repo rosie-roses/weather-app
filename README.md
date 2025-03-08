@@ -70,6 +70,14 @@ Install the required project dependencies:
 npm install
 ```
 
+If you encounter any issues with dependencies (for example, version conflicts between React and other packages), you can run:
+
+```bash
+npm install --force
+```
+
+This command forces npm to resolve the dependencies even if there are conflicts. Note that using ```--force``` may cause issues with incompatible versions, so use this as a fallback if the standard ```npm install``` doesn't work properly.
+
 **Set Up Environment Variables**
 
 1. Create a ```.env``` file in the root directory using the ```.env.example``` file as a template.
