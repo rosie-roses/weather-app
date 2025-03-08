@@ -11,7 +11,7 @@
 
 Weathrly is a weather application built with **React**, **TypeScript**, and **Vite** that provides users with detailed weather data using the [OpenWeatherMap API](https://openweathermap.org/api). With Weathrly, users can access real-time weather information, hourly forecasts, and a 5-day outlook for any city. The app also allows users to search for cities, view their local weather, and manage a list of favorite cities 🌟.
 
-The application has been deployed to production and is now live! 🎉 You can access it at []()
+The application has been deployed to production and is now live! 🎉 You can access it at [weather-app-ten-fawn-77.vercel.app](https://weather-app-ten-fawn-77.vercel.app/).
 
 ## <a name="tech-stack">🛠️ Tech Stack</a>
 
@@ -69,14 +69,6 @@ Install the required project dependencies:
 ```bash
 npm install
 ```
-
-If you encounter any issues with dependencies (for example, version conflicts between React and other packages), you can run:
-
-```bash
-npm install --force
-```
-
-This command forces npm to resolve the dependencies even if there are conflicts. Note that using ```--force``` may cause issues with incompatible versions, so use this as a fallback if the standard ```npm install``` doesn't work properly.
 
 **Set Up Environment Variables**
 
