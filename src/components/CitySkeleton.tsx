@@ -4,8 +4,9 @@ const CitySkeleton = () => {
   return (
     <div className="space-y-6">
       {/* For the Favourite Button */}
-      <div className="flex items-center justify-end">
+      <div className="flex flex-row gap-2 justify-end">
         <Skeleton className="h-[40px] w-[200px]" />
+        <Skeleton className="h-[40px] w-[40px] rounded-md" />
       </div>
 
       {/* For the main content */}

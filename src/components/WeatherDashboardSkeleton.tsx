@@ -10,7 +10,7 @@ const WeatherDashboardSkeleton = () => {
       {/* For the header with the location name and refresh button */}
       <div className="flex items-center justify-between space-x-6">
         <Skeleton className="h-[30px] w-1/4 rounded-lg" />
-        <Skeleton className="h-[30px] w-[40px] rounded-full" />
+        <Skeleton className="h-[40px] w-[40px] rounded-md" />
       </div>
 
       {/* For the main content */}

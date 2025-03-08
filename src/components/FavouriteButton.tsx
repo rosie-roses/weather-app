@@ -26,7 +26,7 @@ const FavouriteButton = ({ data }: FavouriteButtonProps) => {
     <Button
       variant={isCurrentlyFavourite ? "default" : "outline"}
       size={"icon"}
-      className={` cursor-pointer w-full p-4
+      className={` cursor-pointer w-full max-w-[200px]
         ${isCurrentlyFavourite ? "bg-yellow-500 hover:bg-yellow-600" : ""}
       `}
       onClick={handleToggle}

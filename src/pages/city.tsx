@@ -4,6 +4,7 @@ import DateTime from "@/components/DateTime";
 import FavouriteButton from "@/components/FavouriteButton";
 import HourlyTemperature from "@/components/HourlyTemperature";
 import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert";
+import { Button } from "@/components/ui/button";
 import WeatherDetails from "@/components/WeatherDetails";
 import WeatherForecast from "@/components/WeatherForecast";
 import {
@@ -11,7 +12,7 @@ import {
   useReverseGeoCodeQuery,
   useWeatherQuery,
 } from "@/hooks/useWeather";
-import { AlertTriangle } from "lucide-react";
+import { AlertTriangle, RefreshCw } from "lucide-react";
 import { useParams, useSearchParams } from "react-router-dom";
 
 const City = () => {
@@ -28,6 +29,14 @@ const City = () => {
   const forecastQuery = useForecastQuery(coordinates);
 
   const locName = locationQuery.data?.[0];
+
+  const handleRefresh = () => {
+    if (coordinates) {
+      locationQuery.refetch();
+      weatherQuery.refetch();
+      forecastQuery.refetch();
+    }
+  };
 
   if (weatherQuery.error || forecastQuery.error) {
     return (
@@ -47,11 +56,24 @@ const City = () => {
 
   return (
     <div className="space-y-4">
-      <div className="flex items-center justify-end">
-        <div>
+      <div className="flex justify-end">
+        <div className="flex flex-row gap-2 justify-end items-center">
           <FavouriteButton
             data={{ ...weatherQuery.data, name: params.cityName }}
           />
+          <Button
+            variant={"outline"}
+            size={"icon"}
+            onClick={handleRefresh}
+            disabled={weatherQuery.isFetching || forecastQuery.isFetching}
+            className="cursor-pointer"
+          >
+            <RefreshCw
+              className={`h-4 w-4 ${
+                weatherQuery.isFetching ? "animate-spin" : ""
+              }`}
+            />
+          </Button>
         </div>
       </div>
       <div className="grid gap-4">
