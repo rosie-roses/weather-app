@@ -11,7 +11,9 @@
 
 Weathrly is a weather application built with **React**, **TypeScript**, and **Vite** that provides users with detailed weather data using the [OpenWeatherMap API](https://openweathermap.org/api). With Weathrly, users can access real-time weather information, hourly forecasts, and a 5-day outlook for any city. The app also allows users to search for cities, view their local weather, and manage a list of favorite cities 🌟.
 
-The application has been deployed to production and is now live! 🎉 You can access it at [weather-app-ten-fawn-77.vercel.app](https://weather-app-ten-fawn-77.vercel.app/).
+React Query is used in Weathrly to handle data fetching from the OpenWeatherMap API. It helps manage cache, retries, background data synchronisation, and loading states, providing a smooth and optimised user experience when interacting with weather data.
+
+The application has been deployed to production and is now live! 🎉 You can access it at [weather-app-six-black-74.vercel.app](https://weather-app-six-black-74.vercel.app).
 
 ## <a name="tech-stack">🛠️ Tech Stack</a>
 
@@ -22,6 +24,7 @@ The application has been deployed to production and is now live! 🎉 You can ac
 - **ShadCN** – A component library for building modern, reusable UI components.
 - **Recharts** - A React-based charting library used to visualise data with interactive and customisable charts.
 - **OpenWeatherMap API** - Provides real-time weather data and forecasts for cities, including geolocation support.
+- **@tanstack/react-query** – A data fetching and caching library for React that helps with efficient handling of asynchronous data, improving performance and user experience.
 
 ## <a name="features">🔮 Features</a>
 
